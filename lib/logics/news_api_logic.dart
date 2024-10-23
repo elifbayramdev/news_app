@@ -5,15 +5,13 @@ import 'package:news_app/models/news_response_model.dart';
 import 'package:http/http.dart' as http;
 
 class NewsApiLogic {
-  final String apiKey = '81bf09187afe485ea8204c913e7e8057';
+  final String apiKey = 'YOUR_API_KEY_HERE';
   final String baseUrl =
       'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=';
-  final String apiUrl =
-      'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=81bf09187afe485ea8204c913e7e8057';
 
   Future<NewsResponseModel?> getNews() async {
     final response = await http.get(
-      Uri.parse(apiUrl),
+      Uri.parse('$baseUrl$apiKey'),
       headers: {
         'Content-Type': 'application/json',
       },
